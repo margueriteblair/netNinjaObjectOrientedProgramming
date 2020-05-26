@@ -17,4 +17,8 @@ let user1 = {
         console.log(this.email, "has logged out")
     }
 }
-console.log(user1.name)
+user1.name = "Yoshi"
+user1["name"]
+
+//can access properties either with square brackets or dot notation
+//can also change properties 
