@@ -12,6 +12,13 @@ class User {
         this.email = email //the parameter
         this.name = name
     }
+    //define methods outside of the constructor function NO COMMA in classes
+    login() {
+        console.log(`${this.email} is logged in`)
+    }
+    logout() {
+        console.log(`${this.email} is logged out`)
+    }
 
 }
 
