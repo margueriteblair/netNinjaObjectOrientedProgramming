@@ -11,13 +11,21 @@ class User {
     constructor(email, name) {
         this.email = email //the parameter
         this.name = name
+        this.score = 0;
     }
     //define methods outside of the constructor function NO COMMA in classes
     login() {
         console.log(`${this.email} is logged in`)
+        return this
     }
     logout() {
         console.log(`${this.email} is logged out`)
+        return this
+    }
+    updateScore() {
+        this.score++
+        console.log(this.email, "score is now", this.score)
+        return this
     }
 
 }
@@ -26,6 +34,8 @@ let userOne = new User("blair@cic.com", "margie");
 let userTwo = new User("chelsea@careerdevs.com", "chelsea")
 
 console.log(userTwo)
+
+userOne.login().updateScore().updateScore().logout()
 
 //can access properties either with square brackets or dot notation
 //can also change properties
