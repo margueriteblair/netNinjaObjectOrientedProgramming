@@ -7,21 +7,30 @@
 //individual variables are not objects and don't have all the same properties
 //individual variables can still sometimes behave like objects
 
-let user1 = {
-    email: "ryu@ninjas.com",
-    name: "Ryu",
-    login() {
-        console.log(this.email, "has logged in")
-    },
-    logout() {
-        console.log(this.email, "has logged out")
+class User {
+    constructor(email, name) {
+        this.email = email //the parameter
+        this.name = name
     }
+
 }
-user1.name = "Yoshi"
-user1["name"]
+
+let userOne = new User("blair@cic.com", "margie");
+let userTwo = new User("chelsea@careerdevs.com", "chelsea")
+
+console.log(userTwo)
 
 //can access properties either with square brackets or dot notation
 //can also change properties
 //we can make classes ES6 lets us use classes
 //prototypes and classes are pretty similar. Car could be a class with passing in different colors for different cars (diff property vals)
 //syntactic sugar
+
+//constructor function is responsible for making a new user based on 
+//fires whenever we make a new user object
+
+
+//the "new" keyword
+//"creates a new empty object
+//sets the value of this to be the new empty object
+//calls the constructor method
