@@ -21,4 +21,7 @@ user1.name = "Yoshi"
 user1["name"]
 
 //can access properties either with square brackets or dot notation
-//can also change properties 
+//can also change properties
+//we can make classes ES6 lets us use classes
+//prototypes and classes are pretty similar. Car could be a class with passing in different colors for different cars (diff property vals)
+//syntactic sugar
