@@ -7,35 +7,21 @@
 //individual variables are not objects and don't have all the same properties
 //individual variables can still sometimes behave like objects
 
-class User {
-    constructor(email, name) {
-        this.email = email //the parameter
-        this.name = name
-        this.score = 0;
+function User(email, name) {
+    this.email = email;
+    this.name = name;
+    this.online = false;
+    this.login = function() {
+        console.log(this.email, "has logged in")
     }
-    //define methods outside of the constructor function NO COMMA in classes
-    login() {
-        console.log(`${this.email} is logged in`)
-        return this
-    }
-    logout() {
-        console.log(`${this.email} is logged out`)
-        return this
-    }
-    updateScore() {
-        this.score++
-        console.log(this.email, "score is now", this.score)
-        return this
-    }
-
 }
 
 let userOne = new User("blair@cic.com", "margie");
 let userTwo = new User("chelsea@careerdevs.com", "chelsea")
 
-console.log(userTwo)
+console.log(userOne)
+userTwo.login()
 
-userOne.login().updateScore().updateScore().logout()
 
 //can access properties either with square brackets or dot notation
 //can also change properties
@@ -51,3 +37,4 @@ userOne.login().updateScore().updateScore().logout()
 //"creates a new empty object
 //sets the value of this to be the new empty object
 //calls the constructor method
+
