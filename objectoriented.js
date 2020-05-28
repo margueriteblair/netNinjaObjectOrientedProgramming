@@ -21,12 +21,24 @@ User.prototype.logout = function() {
     console.log(this.email, "has logged out")
 }
 
+function Admin(...args) {
+    User.apply(this, args)
+    this.role = "Super Admin"
+}
+
+
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.deleteUser = function(u){
+    users = users.filter(user => {
+        return user.email != u.email;
+    })
+}
+
 let userOne = new User("blair@cic.com", "margie");
 let userTwo = new User("chelsea@careerdevs.com", "chelsea")
+let admin = new Admin("arnell@careerdevs.com", "arnell")
 
-console.log(userOne)
-userTwo.login()
-
+let users = [userOne, userTwo, admin]
 
 //can access properties either with square brackets or dot notation
 //can also change properties
@@ -46,4 +58,4 @@ userTwo.login()
 //every object has a prototype
 //borrowing prototypes from User
 
-
+console.log(admin)
