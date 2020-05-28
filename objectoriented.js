@@ -11,9 +11,14 @@ function User(email, name) {
     this.email = email;
     this.name = name;
     this.online = false;
-    this.login = function() {
-        console.log(this.email, "has logged in")
-    }
+}
+User.prototype.login = function() {
+    this.online = true;
+    console.log(this.email, "has logged in")
+}
+User.prototype.logout = function() {
+    this.online = false ;
+    console.log(this.email, "has logged out")
 }
 
 let userOne = new User("blair@cic.com", "margie");
@@ -37,4 +42,8 @@ userTwo.login()
 //"creates a new empty object
 //sets the value of this to be the new empty object
 //calls the constructor method
+//anything inside a proto property can be shown up directly on the object
+//every object has a prototype
+//borrowing prototypes from User
+
 
